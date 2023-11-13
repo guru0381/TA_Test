@@ -1,0 +1,18 @@
+<!-- homepage.component.html -->
+
+<div>
+  <h2>Cart</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      <label>
+        <input type="checkbox" [checked]="selectedItems.includes(item)" (change)="toggleSelection(item)">
+        {{ item }}
+      </label>
+    </li>
+  </ul>
+
+  <div>
+    <p>Selected Items: {{ selectedItems.join(', ') || 'None' }}</p>
+    <p>Total Cost: {{ totalCost !== null ? '$' + totalCost.toFixed(2) : 'N/A' }}</p>
+  </div>
+</div>
